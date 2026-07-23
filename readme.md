@@ -1,0 +1,1 @@
+My journey learning JavaScript and TypeScript fundamentals through hands-on exercises, coding challenges, and small projects. Covers variables, data types, functions, arrays, objects, asynchronous JavaScript, APIs, and TypeScript basics.
