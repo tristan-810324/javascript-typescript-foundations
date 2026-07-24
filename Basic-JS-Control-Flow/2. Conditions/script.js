@@ -137,7 +137,6 @@ if (availableSeats > 0 ) {
         console.log("Seat Available");
 }
 
-
 /* 
 May ATM machine.
 let balance = 15000;
@@ -153,9 +152,6 @@ if (balance > withdraw) {
 }
 
 
-
-
-
 /* Pwede lang manood ng horror movie kapag 18 pataas.
 let age = 21;
 Kapag qualified: Access Granted
@@ -165,8 +161,6 @@ let age = 21;
 if (age > 18) { 
     console.log("Aceess Granted"); 
 }
-
-
 
 /* Kapag ang total purchase ay 5000 o higit pa, may libreng shipping.
 let total = 6800;
@@ -189,7 +183,6 @@ Congratulations Tristan!
 You qualified for the Academic Excellence Scholarship.
 */ 
 
-
 let studentName = "Tristan"; 
 let gpa = 1.25; 
 
@@ -197,8 +190,6 @@ let gpa = 1.25;
 if (gpa <= 1.50) { 
     console.log(`congrats ${studentName} you are qualified for academic shcolar`); 
 }
-
-
 
 /*  
 Employees who have worked for the company for 15 years or 
@@ -209,14 +200,12 @@ let yearsOfService = 18;
 Expected Output
 Carlos has been added to the Hall of Fame.  */
 
-
 let employee = "Carlos"; 
 let yearsOfService = 18; 
 
 if (yearsOfService >= 15) { 
     console.log(`${employee} has been added to the hall of fame`); 
 }
-
 
 /* 
 University Dean's List
@@ -227,11 +216,13 @@ Expected Output
 Highest Honors Awarded to Tristan.
 
 */
-
-
 let student = "Tristan";
 let gpa = 1.00;
 
 if (gpa === 1.00) {
     console.log(`Highest Honors Awarded to ${student}.`);
-}
+}  
+
+
+
+
