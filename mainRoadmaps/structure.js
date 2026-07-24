@@ -1,4 +1,4 @@
-<!--
+/*
 
 javascript-typescript-foundations
 │
@@ -113,4 +113,4 @@ javascript-typescript-foundations
 
 
 
--->
+*/
