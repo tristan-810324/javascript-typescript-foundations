@@ -17,6 +17,11 @@ Important developer tips
             console.log("failed"); 
     }
 
+  AI TIPS 
+  Gamitin mo ito:
+✅ if (isLoggedIn) para sa Boolean
+✅ if (username === "admin") para sa String
+✅ if (age >= 18) para sa Number
 */
 
 // login example 
@@ -92,4 +97,18 @@ if (examSubmitted === "true") {
 // 4
 let customer = "Tristan";
 let accountVerified = true;
+
+if (accountVerified) {
+    console.log("Loan application accepted.");
+    console.log(`Welcome, ${customer}!`);
+    console.log("Your application is now under review.");
+} else {
+    console.log("Loan application rejected.");
+    console.log("Your account is not verified.");
+    console.log("Please visit the nearest branch.");
+} 
+
+
+
+
 
