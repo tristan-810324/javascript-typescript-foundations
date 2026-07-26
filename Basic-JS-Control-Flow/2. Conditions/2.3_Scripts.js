@@ -390,3 +390,67 @@ if (
     console.log("Approved");
 }
 
+
+// harder challenges  
+ 
+let age = 25;
+let monthlyIncome = 45000; 
+let creditScore = 760; 
+let employementStatus = "employed"; 
+let hasCoMaker = false; 
+let existingCustomer = true; 
+
+
+
+if (
+    age >= 21 && 
+    monthlyIncome >= 40000 && 
+    (creditScore >= 750  || existingCustomer === true)
+) { 
+    console.log("Premuim Loan Approved");
+} else if ( 
+    age >= 21 && 
+    monthlyIncome >= 25000 && 
+    (creditScore >= 650 || hasCoMaker === true)
+) { 
+    console.log("Standard Loan Approved"); 
+} else if ( 
+    age >= 21 && 
+    (employementStatus === "employed" || hasCoMaker === true) 
+) { 
+    console.log("Conditional Approval"); 
+} else {
+     console.log("Loan Rejected"); 
+}
+
+
+// challenge 2 
+
+let yearsOfService = 6;
+let performanceScore = 94;
+let attendanceRate = 97;
+let hasDisciplinaryCase = false;
+let completedLeadershipTraining = true;
+let employeeStatus = "regular";
+
+
+if ( 
+    employeeStatus === "regular" && 
+    yearsOfService >= 5 && 
+    perfomanceScore >= 90 && 
+    (attendanceRate >= 95 || completedLeadershipTraining === true) 
+) { 
+        console.log("Promotion with bonus"); 
+} else if ( 
+    employeeStatus === "regular" && 
+    performanceScore >= 85  && 
+    hasDisciplinaryCase  === true
+) { 
+        console.log("Perfomance Bonus"); 
+} else if ( 
+    performanceScore >= 80 || attendanceRate >= 98
+) { 
+        console.log("certificate of recognition"); 
+} else { 
+        console.log("No Reward");
+}
