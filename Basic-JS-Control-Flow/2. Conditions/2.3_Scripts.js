@@ -344,8 +344,49 @@ if (
     premuimMember === true || 
     rentedMovie === true || 
     movieVoucher == true || 
-    isAdministrator === true || 
+    isAdministrator == true || 
     purchaseMovie === true 
 ) { 
         console.log("Premium Movie Unlocked")
 }
+
+
+
+
+
+//  MERGES CHALLENGES 
+
+let isLoggedIn = true;
+let balance = 150;
+let totalAmount = 120;
+let paymentMethod = "paypal";
+
+
+
+
+if (
+    isLoggedIn && 
+    balance >= totalAmount && 
+    ( 
+       paymentMethod === "credit Card" && 
+       paymentMethod === "paypal" 
+
+    )
+) { 
+        console.log("check out sucessful")
+}
+
+
+
+if (
+    age >= 18 &&
+    accountVerified &&
+    (
+        isPremiumMember ||
+        isAdministrator
+    ) &&
+    accountBalance >= transferAmount
+) {
+    console.log("Approved");
+}
+
