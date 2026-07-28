@@ -534,3 +534,59 @@ if (!isLoggedIn) {
 } else {
     console.log("Application Rejected");
 }
+
+
+
+
+// next challenges
+
+let age = 24; 
+
+let isLoggedIn = true;
+let hasPassfort = true; 
+let hasVisa = false; 
+let destination = "Japan";
+
+
+let hasBoardingPass = true; 
+let hasCheckedBaggage = false; 
+let hasSecurityClearance = true;
+
+let  isSeniorCitizen = false;
+let isVIP = false; 
+let isAirlineEmployee  =  true; 
+
+
+if (!isLoggedIn) {
+    console.log("Please Login");
+
+} else if (!hasPassport) {
+    console.log("Passport Required");
+
+} else if (
+    (destination === "Japan" || destination === "USA") &&
+    !hasVisa
+) {
+    console.log("Visa Required");
+
+} else if (!hasBoardingPass) {
+    console.log("Boarding Pass Required");
+    
+} else if (
+    age >= 60 ||
+    isSeniorCitizen ||
+    isVIP ||
+    isAirlineEmployee
+) {
+    console.log("Priority Boarding");
+
+} else if (
+    hasSecurityClearance &&
+    hasBoardingPass &&
+    hasPassport
+) {
+    console.log("Cleared for Boarding");
+
+} else {
+    console.log("Boarding Denied");
+}
