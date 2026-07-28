@@ -454,3 +454,83 @@ if (
 } else { 
         console.log("No Reward");
 }
+
+
+
+
+let hosHospitalId = true; 
+let isLoggedIn = false
+let hasOtp = false;
+
+if (!isLoggedIn) { 
+      console.log("Please login"); 
+} else if (!hasOtp) { 
+      console.log("OTP Required"); 
+} else if (!hasHospitalId) { 
+      console.log("hopital id is required"); 
+} 
+
+
+// last challenges before going to the next lesson 
+// Final Challenge - University Enrollment & Scholarship System
+
+let age = 19;
+let gradeAverage = 94;
+let entranceExam = 91;
+
+let isLoggedIn = true;
+let hasSubmittedRequirements = true;
+let hasPaidApplicationFee = true;
+
+let hasDisciplinaryRecord = false;
+let isVarsityPlayer = false;
+let wonNationalCompetition = true;
+let isScholarshipRenewal = false;
+
+if (!isLoggedIn) {
+    console.log("Please Login");
+
+} else if (!hasSubmittedRequirements) {
+    console.log("Submit All Requirements");
+
+} else if (!hasPaidApplicationFee) {
+    console.log("Application Fee Required");
+
+} else if (
+    age >= 17 &&
+    gradeAverage >= 98 &&
+    entranceExam >= 95 &&
+    !hasDisciplinaryRecord
+) {
+    console.log("Presidential Scholarship Awarded");
+
+} else if (
+    age >= 17 &&
+    gradeAverage >= 95 &&
+    (
+        entranceExam >= 90 ||
+        wonNationalCompetition
+    ) &&
+    !hasDisciplinaryRecord
+) {
+    console.log("Full Scholarship Awarded");
+
+} else if (
+    gradeAverage >= 90 &&
+    (
+        isVarsityPlayer ||
+        isScholarshipRenewal
+    )
+) {
+    console.log("Partial Scholarship Awarded");
+
+} else if (
+    age >= 17 &&
+    gradeAverage >= 75 &&
+    entranceExam >= 60
+) {
+    console.log("Qualified for Admission");
+
+} else {
+    console.log("Application Rejected");
+}
