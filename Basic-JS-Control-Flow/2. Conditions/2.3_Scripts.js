@@ -571,7 +571,7 @@ if (!isLoggedIn) {
 
 } else if (!hasBoardingPass) {
     console.log("Boarding Pass Required");
-    
+
 } else if (
     age >= 60 ||
     isSeniorCitizen ||
@@ -589,4 +589,56 @@ if (!isLoggedIn) {
 
 } else {
     console.log("Boarding Denied");
+}
+
+
+
+
+// last before i sleep
+
+let isLoggedIn = true; 
+let accountStatus = "active"; 
+
+let hasShippingAddress = true;
+let hasPaymentMethod = true; 
+
+let isPremuimMember = false;
+let hasCoupon = true; 
+
+let cartTotal = 3200; 
+let minimumCheckoutAmount = 500; 
+
+let productInStock = true; 
+let accountSuspended = false;
+
+
+
+
+
+
+if (!isLoggedIn) { 
+    console.log("Please Login"); 
+} else if (!accountSuspended) { 
+    console.log("Account Suspended"); 
+} else if (!accountStatus === "active") { 
+    console.log("Account is inactive"); 
+} else if  (!hasShippingAddress) { 
+    console.log("shipping address required")
+} else if (!haspaymentMethod) { 
+    console.log("payment method required"); 
+} else if (!productInStock) { 
+    console.log("Product  out of stock"); 
+} else if ( 
+    cartTotal >= 500 &&
+    productInStock && 
+    (isPremuimMember === true || hasCoupon === true) 
+) { 
+    console.log("Premuim Checkout Approved"); 
+} else if (
+    cartTotal >= 500 && 
+    productInStock === true
+) { 
+    console.log("standard checkout Approved");
+} else { 
+    console.log("standard checkout Approved"); 
 }
