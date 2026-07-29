@@ -620,11 +620,11 @@ if (!isLoggedIn) {
     console.log("Please Login"); 
 } else if (!accountSuspended) { 
     console.log("Account Suspended"); 
-} else if (!accountStatus === "active") { 
+} else if (accountStatus !== "active") { 
     console.log("Account is inactive"); 
 } else if  (!hasShippingAddress) { 
     console.log("shipping address required")
-} else if (!haspaymentMethod) { 
+} else if (!hasPaymentMethod) { 
     console.log("payment method required"); 
 } else if (!productInStock) { 
     console.log("Product  out of stock"); 
@@ -640,5 +640,5 @@ if (!isLoggedIn) {
 ) { 
     console.log("standard checkout Approved");
 } else { 
-    console.log("standard checkout Approved"); 
+    console.log("checkout failed"); 
 }
