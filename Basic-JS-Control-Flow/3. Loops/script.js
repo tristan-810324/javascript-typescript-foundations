@@ -1,5 +1,8 @@
-// ternary operators - is a short version of if..else 
+/* ternary operators - is a short version of if..else 
+-- Simple decision (dalawang choices lang) → Gumamit ng Ternary.
+-- Maraming kondisyon (3 o higit pa) → Gumamit ng if...else if...else.
 
+    */ 
 // examples 
  
 if (age >= 19) { 
@@ -123,6 +126,21 @@ let totalShipping =
 
     console.log(totalShipping); 
 
-
-
     
+
+// before we proceed to loops 
+
+let yearsOfService = 7;
+let performanceScore = 92;
+let isLate = false;
+
+let employeeBonus =
+    yearsOfService >= 5 &&
+    performanceScore >= 90 &&
+    !isLate
+        ? "Eligible for $1000 Bonus"
+        : "Not Eligible for Bonus";
+
+console.log(employeeBonus);
+
+
