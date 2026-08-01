@@ -478,3 +478,7 @@ for (let customer = 1; customer <= 8; customer++) {
 
     console.log("----------------------");
 }
+
+
+
+
