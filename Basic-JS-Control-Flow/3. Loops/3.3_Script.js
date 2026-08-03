@@ -259,3 +259,103 @@ totalSales: 1500
 
 */
 
+let totalSales = 1000; 
+
+for (let day = 1; day <= 5; day++) { 
+        totalSales += 500; 
+
+    console.log("days :" + day); 
+    console.log("sales : " + totalSales); 
+} 
+
+console.log ("totalSales: " + totalSales);
+
+
+
+
+let bagPack = 100; 
+
+for (let employee = 1; employee <= 5; employee++) { 
+    bagpack += 100;
+
+    console.log("Employee " + employee + ": " + bagPack); 
+}
+
+
+
+
+let total = 0;
+
+for(let number = 1; number <=4; number++){
+
+    total += number;
+
+}
+
+
+
+
+// continue 
+
+
+for (let box = 1; box <= 8; box++) {
+
+    if (box === 4) {
+        continue;
+    }
+
+    console.log("Box " + box);
+
+}
+
+ //
+
+ let total = 0;
+
+for (let number = 1; number <= 5; number++) {
+
+    if (number === 3) {
+        continue;
+    }
+
+    total += number;
+
+}
+
+console.log(total);
+
+// challenge: continue statement 
+
+    let total = 0; 
+
+for (let number = 1; number <= 10; number++) { 
+     
+    if (number === 5) { 
+        continue; 
+    } 
+    total += number; 
+} 
+
+console.log("Total: " + total); 
+
+ //  next 
+  
+let total = 0; 
+
+for (let item = 1; item <= 8; item++) { 
+
+    if (item === 3  || item === 5) { 
+        console.log(`Item ${item} is defective, skipping...`);
+        continue;    
+    } 
+    else { 
+        console .log(`Item ${item} is good, adding to total...`);
+        total += item;
+    }
+}
+
+
+
+ 
+
+
