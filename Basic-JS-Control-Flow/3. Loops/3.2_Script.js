@@ -482,3 +482,30 @@ for (let customer = 1; customer <= 8; customer++) {
 
 
 
+// Airport Security Scanner
+
+let suspiciousPassengerId = 0;
+let totalScanned = 0;
+
+for (let passengerId = 1; passengerId <= 300; passengerId++) {
+
+    console.log("Scanning Passenger #" + passengerId);
+
+    totalScanned = passengerId;
+
+    if (passengerId === 147) {
+        console.log("Suspicious Passenger Detected!");
+        suspiciousPassengerId = passengerId;
+        break;
+    }
+}
+
+console.log("\nAirport Security Closed");
+console.log("Total Passengers Scanned: " + totalScanned);
+console.log("Suspicious Passenger ID: " + suspiciousPassengerId);
+
+
+
+
+
+
