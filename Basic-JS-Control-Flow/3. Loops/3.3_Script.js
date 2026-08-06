@@ -259,7 +259,7 @@ totalSales: 1500
 
 */
 
-let totalSales = 1000; 
+let totalSales = 1000; // + 500 + 500 + 500 + 500 + 500  = 3500 
 
 for (let day = 1; day <= 5; day++) { 
         totalSales += 500; 
@@ -353,9 +353,145 @@ for (let item = 1; item <= 8; item++) {
         total += item;
     }
 }
-
-
-
  
+
+// 1 examples 
+
+let total = 0; 
+
+for (let item = 1; item <= 5; item++) { 
+    if (item === 2){ 
+        continue;
+    }
+
+    total += 1000;
+} 
+
+console.log(total); 
+
+// 2 
+let balance = 5000; 
+
+for(let payment = 1; payment <= 5; payment++) { 
+    balance -= 1000;  
+} 
+
+console.log(balance); 
+
+
+// 3 
+
+let total = 0; 
+
+for (let number = 1; number <= 6; number++) { 
+
+    total = total + number; 
+
+    if(total > 10) { 
+        break; 
+    }
+}
+
+console.log(total);
+
+
+
+// 4 
+
+let score = 0; 
+
+for(let exam = 1; exam <=5; exam++) { 
+
+    if(exam === 4) { 
+        continue; 
+    }
+     score += 20; 
+}   
+    if(score >= 80) { 
+        console.log("passed"); 
+    }
+    else { 
+        console.log("failed"); 
+    }
+
+
+
+//  5 
+let money = 10000; 
+let spent = 0; 
+
+for (let day = 1; day <= 7; day++) { 
+    if (day === 5) { 
+        continue; 
+   } 
+
+   spent += 1800;
+  
+    if (spent >= money) { 
+        break;
+    }  
+}
+
+console.log(spent); 
+
+// 6  
+
+let stock = 15;  
+
+for (let customer = 1; customer <= 10; customer++) { 
+
+    if (customer === 6) { 
+        continue; 
+    }
+
+      stock--; 
+
+    if(stock === 10) { 
+        break; 
+    } 
+} 
+
+console.log(stock);                      
+
+
+
+
+// 7  
+let total = 0  
+ 
+for (let item = 1; item <= 8; item++) { 
+
+    if (item === 3 || item === 6) { 
+        continue; 
+    }
+     
+    total  = total + item;
+}
+    
+
+
+// 8 
+let wallet = 15000;
+let purchase = 0;
+
+for (let item = 1; item <= 10; item++) {
+
+    if (item === 2 || item === 7) {
+        continue;
+    }
+
+    purchase += 2300;
+
+    if (purchase >= wallet) {
+        break;
+    }
+
+}
+
+console.log(purchase);
+
+
+
+
 
 

@@ -144,3 +144,20 @@ let employeeBonus =
 console.log(employeeBonus);
 
 
+let balance = 10000; 
+let totalbalance  = 0;
+
+for (let item = 1; item <= 6; item++) { 
+
+    if (item === 2) { 
+        continue; 
+    }
+    
+    totalPurchase += 1800; 
+
+    if (totalPurchase > balance) { 
+         break; 
+    }
+}  
+
+console.log(totalPurchase); 
