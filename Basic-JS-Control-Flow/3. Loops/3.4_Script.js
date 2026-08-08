@@ -277,3 +277,139 @@ for (let department = 1; department <= 3; department++) {
 console.log("Total Sales:", totalSales);
 console.log("Total Products:", totalProducts);
 console.log("Remaining Budget:", budget);
+
+
+
+
+/* 
+
+2 ware house each warehouse has a 4 boxes that has 10 item on each box
+kapag  box is equal to 2  continue 
+*/ 
+
+let totalItems = 0; 
+let processedBoxes = 0; 
+
+
+for (let warehouse = 1; warehouse <= 2; warehouse++) { 
+     
+    for (let box = 1; box <= 4; box++) {  
+
+        if (box === 2) { 
+            continue; 
+        } 
+        processedBoxes++; 
+        totalItems += 10; 
+
+        if (totalItems >= 50) { 
+            break; 
+        }
+    }
+} 
+
+console.log("total items is:" + totalItems); 
+console.log("Processed Boxes: processedBoxes"); 
+
+
+// challenges
+
+let totalUnits = 0; 
+let processedProducts = 0; 
+
+
+for (let machine = 1; machine <= 3; machine++) { 
+    console.log(`machine ${machine}`); 
+
+    for (let product = 1; product <= 5; product++) { 
+            if (product === 3){ 
+                continue; 
+            } 
+
+            processedProducts++; 
+            totalUnits += 20; 
+
+            if(totalUnits >= 100){ 
+                break; 
+            }
+    }
+}
+
+
+
+/* 
+3 warehouse 
+5 trucks 
+15 boxes
+*/   
+ 
+
+let totalBoxes = 0; 
+let deliveredTrucks = 0; 
+
+
+for (let warehouse = 1; warehouse <= 3; warehouse++) { 
+        console.log(`Warehouse ${warehouse}`); 
+
+        for (let teruck = 1; truck <= 5; truck++) { 
+             if (truck === 2) { 
+                continue; 
+             } 
+
+             deliveredTrucks ++;
+             totalBoxes += 15; 
+
+             if (totalBoxes >= 90) { 
+                break; 
+             }
+
+        }
+} 
+
+console.log("total Boxes: " + totalBoxes); 
+console.log("Delivered Trucks" + deliveredTrucks); 
+
+
+/* 
+ 
+2 machines 
+5 product
+
+*/ 
+
+
+let processProducts = 0;
+let passProducts = 0; 
+let failedProducts = 0; 
+
+
+for (let machine = 1; machine <= 2; machine++) { 
+        console.log(`machine ${machine}`); 
+
+        for(let product = 1; product <= 5; product++) { 
+            
+            let qualityScore = 80; 
+
+            if (product === 2){ 
+                continue; 
+            }  
+
+            processProducts++; 
+
+            if(qualityScore >= 80) { 
+                console.log(`Products ${product} : is PASS`);
+                 passedProducts++;
+            } 
+            else  { 
+                console.log(`Product ${product}: FAIL`);
+                 failedProducts++;
+            } 
+
+            if (passedProducts >= 3) { 
+                break; 
+            }
+        }
+} 
+
+console.log("Processed Products:", processedProducts);
+console.log("Passed Products:", passedProducts);
+console.log("Failed Products:", failedProducts);
