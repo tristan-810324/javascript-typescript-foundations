@@ -97,7 +97,7 @@ for (let classrooms = 1; classrooms <= 3; classrooms++) {
  
 
 
-
+// challenges 
 let totalItems = 0; 
 
 for (let warehouse = 1; warehouse <= 3; warehouse++) { 
@@ -116,4 +116,164 @@ for (let warehouse = 1; warehouse <= 3; warehouse++) {
     }
 } 
 
-console.log(`the total items are ${totalItems}`); 
+console.log(`the total items are ${totalItems}`);  
+
+
+
+
+// challenges 
+
+
+let totalProduction = 0; 
+
+for (let machine = 1; machine <= 4; machine++) {
+        console.log("Machine" + machine); 
+        
+    for (let product = 1; product <= 6; products++) { 
+            if (product === 4) { 
+                continue; 
+            }
+
+            totalProduction += 50;  
+            console.log("Products" + product); 
+    }
+}
+
+console.log(totalProduction);
+
+
+
+
+let totalItems = 0; 
+
+for (let truck = 1; truck <= 5; truck++) { 
+    console.log("truck" + truck); 
+
+    for (let box = 1; box <= 8; box++) { 
+        if(box === 3) {
+            continue; 
+        } 
+        totalItems += 20; 
+        console.log(`box ${box}`); 
+
+        if (totalItems >= 500) { 
+            break; 
+        }
+    }
+} 
+
+console.log(totalItems); 
+
+
+
+let totalProduction = 0; 
+
+
+for (let machine = 1; machine <= 4; machine++) { 
+
+    console.log(`machine ${machine}`); 
+
+    for (let product = 1; product <= 7; product++) { 
+          if (product === 2) { 
+            continue; 
+          } 
+
+          totalProduction  +=30; 
+          console.log(`Product ${product}`); 
+
+
+           if (totalProduction >= 300) { 
+            break; 
+        }
+    }   
+
+}
+
+console.log(totalProduction); 
+
+
+
+/*  
+ 
+3 departments 
+5 products
+prices of 500
+starting budget of stoee 10,000 
+
+
+product 2 skip use continue 
+bugget of 10k minus 500  -= 
+bugdet <= 0 BREAK 
+
+const isAvailable = true  available/ out of stock
+
+
+*/  
+
+
+
+
+
+
+
+
+let budget = 10000;
+let totalSales = 0;
+let totalProducts = 0;
+
+const price = 500;
+
+for (let department = 1; department <= 3; department++) {
+
+        let departmentName; 
+
+        if (departmentName === 1) { 
+                departmentName = "Electronics"; 
+        } 
+        else if (departmentName === 2) { 
+                departmentName = "Groceries"; 
+        } 
+        else if (departmentName === 3) { 
+                departmentName = "Clothing"; 
+        }
+
+        console.log(`Deparment : ${departmentName}`); 
+
+    for (let product = 1; product <= 5; product++) {
+
+        const isAvailable = product !== 2; 
+
+        if (!isAvailable) { 
+            console.log(`Product ${product} out of stock`); 
+        }
+
+        totalSales += price; 
+        bugdet -= price; 
+        totalProducts++; 
+
+        const status = isAvailable ? "Available" : "out of stock"; 
+        console.log( `product ${product} : ${status} | price ${price}`); 
+
+
+ if (product === 4 || product === 5) {
+            console.log("Premium Product");
+        }
+
+        if (product >= 4 && isAvailable) {
+            console.log("High Value Sale");
+        }
+
+        if (!isAvailable) {
+            console.log("Product is not available");
+        }
+
+        if (budget <= 0) {
+            console.log("Budget exhausted!");
+            break;
+        }
+    }
+}
+
+console.log("Total Sales:", totalSales);
+console.log("Total Products:", totalProducts);
+console.log("Remaining Budget:", budget);

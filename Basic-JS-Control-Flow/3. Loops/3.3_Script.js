@@ -490,8 +490,3 @@ for (let item = 1; item <= 10; item++) {
 
 console.log(purchase);
 
-
-
-
-
-
