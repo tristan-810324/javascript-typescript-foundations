@@ -375,41 +375,77 @@ console.log("Delivered Trucks" + deliveredTrucks);
 5 product
 
 */ 
+let processedProducts = 0;
+let passedProducts = 0;
+let failedProducts = 0;
 
+for (let machine = 1; machine <= 2; machine++) {
 
-let processProducts = 0;
-let passProducts = 0; 
-let failedProducts = 0; 
+    console.log(`Machine ${machine}`);
 
+    for (let product = 1; product <= 5; product++) {
 
-for (let machine = 1; machine <= 2; machine++) { 
-        console.log(`machine ${machine}`); 
+        let qualityScore = 80;
 
-        for(let product = 1; product <= 5; product++) { 
-            
-            let qualityScore = 80; 
-
-            if (product === 2){ 
-                continue; 
-            }  
-
-            processProducts++; 
-
-            if(qualityScore >= 80) { 
-                console.log(`Products ${product} : is PASS`);
-                 passedProducts++;
-            } 
-            else  { 
-                console.log(`Product ${product}: FAIL`);
-                 failedProducts++;
-            } 
-
-            if (passedProducts >= 3) { 
-                break; 
-            }
+        if (product === 2) {
+            continue;
         }
-} 
+
+        processedProducts++;
+
+        if (qualityScore >= 80) {
+
+            console.log(`Product ${product}: PASS`);
+            passedProducts++;
+
+        } else {
+
+            console.log(`Product ${product}: FAIL`);
+            failedProducts++;
+        }
+
+        if (passedProducts >= 3) {
+            break;
+        }
+    }
+}
 
 console.log("Processed Products:", processedProducts);
 console.log("Passed Products:", passedProducts);
-console.log("Failed Products:", failedProducts);
+console.log("Failed Products:", failedProducts);  
+
+
+
+
+
+// last challenge 
+let processedProducts = 0;
+let totalStocks = 0;
+
+for (let department = 1; department <= 2; department++) {
+
+    console.log(`Department ${department}`);
+
+    for (let product = 1; product <= 5; product++) {
+
+        if (product === 2) {
+            continue;
+        }
+
+        processedProducts++;
+        totalStocks += 10;
+
+        if (totalStocks >= 40) {
+            console.log("Stock level is: HIGH");
+        } else {
+            console.log("Stock level is: LOW");
+        }
+
+        if (totalStocks >= 60) {
+            break;
+        }
+    }
+}
+
+console.log("Processed Products:", processedProducts);
+console.log("Total Stocks:", totalStocks);

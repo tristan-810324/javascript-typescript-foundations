@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-slate-50/60 antialiased selection:bg-emerald-500 selection:text-white">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AuraData AI — Enterprise Excel & Data Engine</title>
+  
+  <!-- Modern Typography: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          boxShadow: {
+            'card': '0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.03)',
+            'card-hover': '0 10px 25px -5px rgba(16, 185, 129, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.01)',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="min-h-full flex flex-col text-slate-800 font-sans">
+
+  <!-- TOP NAVIGATION HEADER -->
+  <header class="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-slate-200/80 px-6 lg:px-12 py-3.5">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      
+      <!-- Brand Logo Section (Excel Emerald Theme) -->
+      <div class="flex items-center space-x-3.5 group cursor-pointer">
+        <!-- Icon Badge with Green Multi-layer Glow -->
+        <div class="relative">
+          <div class="absolute -inset-0.5 bg-gradient-to-r from-emerald-600 via-teal-600 to-green-400 rounded-xl blur-sm opacity-40 group-hover:opacity-75 transition duration-300"></div>
+          <div class="relative w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-600 via-teal-600 to-emerald-500 flex items-center justify-center shadow-sm border border-white/20">
+            <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 3L4 19H8.5L12 11L15.5 19H20L12 3Z" fill="currentColor"/>
+              <circle cx="12" cy="7" r="1.5" fill="#A7F3D0"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Typography -->
+        <div>
+          <div class="flex items-center gap-2">
+            <h1 class="font-display font-extrabold text-lg tracking-tight bg-gradient-to-r from-slate-900 via-emerald-950 to-teal-900 bg-clip-text text-transparent">
+              AuraData
+            </h1>
+            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200/80 tracking-wide font-mono">
+              EXCEL & CSV ENGINE
+            </span>
+          </div>
+          <p class="text-[11px] font-medium text-slate-500">Automated Data Ingestion & Cleaning</p>
+        </div>
+      </div>
+
+      <!-- Right Header Status Indicator -->
+      <div class="flex items-center space-x-3">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100/80 border border-slate-200/60 text-xs font-medium text-slate-600">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </span>
+          <span class="font-mono text-[11px] tracking-wider text-slate-700 font-semibold">PIPELINE: ONLINE</span>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="flex-1 max-w-4xl w-full mx-auto px-6 py-10 flex flex-col gap-8">
+    
+    <!-- Hero / Headline Section -->
+    <div class="text-center max-w-xl mx-auto space-y-2">
+      <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+        Clean your CSV & Excel sheets instantly.
+      </h2>
+      <p class="text-sm text-slate-500 leading-relaxed">
+        Mag-upload ng raw CSV file para sa automated duplicate removal, null handling, at structural validation.
+      </p>
+    </div>
+
+    <!-- DATA INGESTION CARD -->
+    <section class="bg-white border border-slate-200/80 rounded-2xl p-6 sm:p-8 shadow-card hover:shadow-card-hover transition-all duration-300">
+      
+      <!-- Card Header -->
+      <div class="flex items-center justify-between mb-5">
+        <div class="flex items-center gap-2.5">
+          <div class="w-2.5 h-2.5 rounded-full bg-emerald-500"></div>
+          <h3 class="font-display text-base font-bold text-slate-900">Ingestion Pipeline</h3>
+        </div>
+        <span class="text-xs text-slate-400 font-mono">Supports: .CSV, .XLSX (Max 50MB)</span>
+      </div>
+
+      <!-- Drag & Drop Zone -->
+      <div 
+        id="dropzone" 
+        onclick="document.getElementById('fileInput').click()"
+        ondragover="handleDragOver(event)"
+        ondragleave="handleDragLeave(event)"
+        ondrop="handleDrop(event)"
+        class="group relative border-2 border-dashed border-slate-200 hover:border-emerald-500/80 rounded-xl p-8 sm:p-12 text-center bg-slate-50/50 hover:bg-emerald-50/30 transition-all duration-200 cursor-pointer overflow-hidden"
+      >
+        <input type="file" id="fileInput" accept=".csv,.xlsx" class="hidden" onchange="handleFileSelect(event)">
+        
+        <div class="flex flex-col items-center justify-center space-y-3 pointer-events-none">
+          <!-- Animated Green Icon Container -->
+          <div class="w-12 h-12 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center text-emerald-600 group-hover:scale-110 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-300 shadow-sm">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+          </div>
+          
+          <!-- Instructions Text -->
+          <div>
+            <p id="fileNameDisplay" class="text-sm font-semibold text-slate-700 group-hover:text-emerald-700 transition">
+              Click to upload CSV <span class="font-normal text-slate-400">or drag and drop</span>
+            </p>
+            <p class="text-xs text-slate-400 mt-1">Automatic column detection & anomaly checks</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Primary Action CTA Button -->
+      <div id="actionArea" class="mt-6 flex items-center justify-between pt-4 border-t border-slate-100 hidden">
+        <div class="flex items-center gap-2 text-xs text-slate-500">
+          <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+          <span id="selectedFileName" class="font-mono font-medium text-slate-700">dataset.csv</span>
+        </div>
+
+        <button 
+          onclick="processData()" 
+          class="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white text-xs font-semibold rounded-xl shadow-md shadow-emerald-500/10 active:scale-[0.98] transition-all"
+        >
+          <span>Run Automated Pipeline</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+        </button>
+      </div>
+
+    </section>
+
+    <!-- METRICS SUMMARY PANEL (Appears on Process) -->
+    <section id="resultCard" class="bg-white border border-slate-200/80 rounded-2xl p-6 sm:p-8 shadow-card hidden transition-all duration-300">
+      
+      <!-- Result Header -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-slate-100 gap-3">
+        <div class="space-y-1">
+          <div class="flex items-center gap-2">
+            <span class="flex h-2 w-2 rounded-full bg-emerald-500"></span>
+            <h3 class="font-display text-base font-bold text-slate-900">Dataset Cleaned Successfully</h3>
+          </div>
+          <p id="metricsDatasetName" class="text-xs font-mono text-slate-400">Dataset: --</p>
+        </div>
+
+        <span class="self-start sm:self-auto inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200/80 font-mono">
+          ✓ STATUS: READY FOR ANALYTICS
+        </span>
+      </div>
+
+      <!-- Executive KPI Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
+        
+        <!-- Metric Card 1 -->
+        <div class="p-4 bg-slate-50/80 rounded-xl border border-slate-200/60 flex flex-col justify-between">
+          <span class="text-xs font-medium text-slate-500">Total Records</span>
+          <div class="mt-2 flex items-baseline gap-2">
+            <span id="totalRows" class="font-display text-2xl font-extrabold text-slate-900">0</span>
+            <span class="text-[11px] font-mono text-slate-400">rows</span>
+          </div>
+        </div>
+
+        <!-- Metric Card 2 (Excel Green Highlight) -->
+        <div class="p-4 bg-emerald-50/50 rounded-xl border border-emerald-100/80 flex flex-col justify-between">
+          <span class="text-xs font-medium text-emerald-800">Duplicates Removed</span>
+          <div class="mt-2 flex items-baseline gap-2">
+            <span id="duplicates" class="font-display text-2xl font-extrabold text-emerald-600">0</span>
+            <span class="text-[11px] font-mono text-emerald-600/70">cleared</span>
+          </div>
+        </div>
+
+        <!-- Metric Card 3 -->
+        <div class="p-4 bg-slate-50/80 rounded-xl border border-slate-200/60 flex flex-col justify-between">
+          <span class="text-xs font-medium text-slate-500">Null Values Imputed</span>
+          <div class="mt-2 flex items-baseline gap-2">
+            <span id="missingValues" class="font-display text-2xl font-extrabold text-slate-900">0</span>
+            <span class="text-[11px] font-mono text-slate-400">handled</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- JAVASCRIPT INTERACTIONS -->
+  <script>
+    let activeFile = null;
+
+    function handleFileSelect(event) {
+      const file = event.target.files[0];
+      if (file) setFile(file);
+    }
+
+    function handleDragOver(event) {
+      event.preventDefault();
+      document.getElementById('dropzone').classList.add('border-emerald-500', 'bg-emerald-50/50');
+    }
+
+    function handleDragLeave(event) {
+      event.preventDefault();
+      document.getElementById('dropzone').classList.remove('border-emerald-500', 'bg-emerald-50/50');
+    }
+
+    function handleDrop(event) {
+      event.preventDefault();
+      document.getElementById('dropzone').classList.remove('border-emerald-500', 'bg-emerald-50/50');
+      if (event.dataTransfer.files.length > 0) {
+        setFile(event.dataTransfer.files[0]);
+      }
+    }
+
+    function setFile(file) {
+      activeFile = file;
+      document.getElementById('fileNameDisplay').innerHTML = `<span class="text-emerald-700 font-bold">${file.name}</span> selected`;
+      document.getElementById('selectedFileName').innerText = file.name;
+      document.getElementById('actionArea').classList.remove('hidden');
+    }
+
+    function processData() {
+      if (!activeFile) return;
+
+      document.getElementById('metricsDatasetName').innerText = "Dataset: " + activeFile.name;
+      document.getElementById('totalRows').innerText = "1,420";
+      document.getElementById('duplicates').innerText = "14";
+      document.getElementById('missingValues').innerText = "38";
+
+      const resultCard = document.getElementById('resultCard');
+      resultCard.classList.remove('hidden');
+      resultCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  </script>
+</body>
+</html>
