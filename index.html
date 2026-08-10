@@ -1,252 +1,412 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full bg-slate-50/60 antialiased selection:bg-emerald-500 selection:text-white">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AuraData AI — Enterprise Excel & Data Engine</title>
-  
-  <!-- Modern Typography: Plus Jakarta Sans & Inter -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            display: ['Plus Jakarta Sans', 'sans-serif'],
-          },
-          boxShadow: {
-            'card': '0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.03)',
-            'card-hover': '0 10px 25px -5px rgba(16, 185, 129, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.01)',
-          }
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AuraData AI - Data Narrative Platform</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#005228",
+                        "secondary": "#565e74",
+                        "on-surface": "#0b1c30",
+                        "surface-dim": "#cbdbf5",
+                        "inverse-surface": "#213145",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-tertiary-container": "#b9ffbf",
+                        "on-primary-container": "#b6ffc5",
+                        "on-primary": "#ffffff",
+                        "outline-variant": "#becabd",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "tertiary": "#006129",
+                        "surface-container-high": "#dce9ff",
+                        "background": "#f8f9ff",
+                        "on-surface-variant": "#3f4940",
+                        "on-background": "#0b1c30",
+                        "tertiary-fixed-dim": "#4ae176",
+                        "error": "#ba1a1a",
+                        "secondary-fixed": "#dae2fd",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-variant": "#d3e4fe",
+                        "on-tertiary-fixed": "#002109",
+                        "surface-container-highest": "#d3e4fe",
+                        "surface-container": "#e5eeff",
+                        "primary-fixed-dim": "#7ada95",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#7ada95",
+                        "tertiary-fixed": "#6bff8f",
+                        "primary-container": "#107c41",
+                        "outline": "#6f7a6f",
+                        "on-secondary-fixed": "#131b2e",
+                        "on-error-container": "#93000a",
+                        "surface": "#f8f9ff",
+                        "on-secondary": "#ffffff",
+                        "primary": "#006130",
+                        "surface-tint": "#006d37",
+                        "on-primary-fixed": "#00210c",
+                        "surface-container-low": "#eff4ff",
+                        "on-secondary-container": "#5c647a",
+                        "secondary-container": "#dae2fd",
+                        "primary-fixed": "#96f7af",
+                        "on-tertiary-fixed-variant": "#005321",
+                        "tertiary-container": "#007d36",
+                        "surface-bright": "#f8f9ff",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "slate-50": "#F8FAFC",
+                        "slate-200": "#E2E8F0",
+                        "slate-900": "#0F172A",
+                        "emerald-600": "#107C41",
+                        "emerald-500": "#22C55E",
+                        "emerald-700": "#046C4E"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem",
+                        "card": "8px"
+                    },
+                    "spacing": {
+                        "container-margin": "24px",
+                        "section-gap": "32px",
+                        "gutter": "16px",
+                        "sidebar-width": "260px",
+                        "unit": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "mono-data": ["JetBrains Mono"],
+                        "body-lg": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "mono-data": ["13px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }]
+                    }
+                }
+            }
         }
-      }
-    }
-  </script>
+    </script>
+<style>
+        .glow-input:focus-within {
+            box-shadow: 0 0 0 4px rgba(16, 124, 65, 0.1);
+        }
+        .step-number {
+            font-size: 8rem;
+            line-height: 1;
+            font-weight: 700;
+            color: rgba(16, 124, 65, 0.05);
+            position: absolute;
+            top: -2rem;
+            left: -1rem;
+            z-index: 0;
+            pointer-events: none;
+        }
+    </style>
 </head>
-<body class="min-h-full flex flex-col text-slate-800 font-sans">
-
-  <!-- TOP NAVIGATION HEADER -->
-  <header class="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-slate-200/80 px-6 lg:px-12 py-3.5">
-    <div class="max-w-6xl mx-auto flex items-center justify-between">
-      
-      <!-- Brand Logo Section (Excel Emerald Theme) -->
-      <div class="flex items-center space-x-3.5 group cursor-pointer">
-        <!-- Icon Badge with Green Multi-layer Glow -->
-        <div class="relative">
-          <div class="absolute -inset-0.5 bg-gradient-to-r from-emerald-600 via-teal-600 to-green-400 rounded-xl blur-sm opacity-40 group-hover:opacity-75 transition duration-300"></div>
-          <div class="relative w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-600 via-teal-600 to-emerald-500 flex items-center justify-center shadow-sm border border-white/20">
-            <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 3L4 19H8.5L12 11L15.5 19H20L12 3Z" fill="currentColor"/>
-              <circle cx="12" cy="7" r="1.5" fill="#A7F3D0"/>
-            </svg>
-          </div>
-        </div>
-
-        <!-- Typography -->
-        <div>
-          <div class="flex items-center gap-2">
-            <h1 class="font-display font-extrabold text-lg tracking-tight bg-gradient-to-r from-slate-900 via-emerald-950 to-teal-900 bg-clip-text text-transparent">
-              AuraData
-            </h1>
-            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200/80 tracking-wide font-mono">
-              EXCEL & CSV ENGINE
+<body class="bg-surface-bright text-on-surface font-body-md overflow-x-hidden flex flex-col min-h-screen">
+<!-- Navigation -->
+<header class="h-20 bg-white/80 backdrop-blur-md border-b border-outline-variant/30 flex justify-between items-center px-6 md:px-12 sticky top-0 z-50">
+<div class="flex items-center gap-3 cursor-pointer">
+<span class="material-symbols-outlined text-primary-container text-3xl">analytics</span>
+<h1 class="font-headline-sm text-headline-sm font-bold text-slate-900 tracking-tight">AuraData AI</h1>
+</div>
+<nav class="hidden md:flex items-center gap-8 font-body-md font-medium text-secondary">
+<a class="hover:text-primary-container transition-colors" href="#how-it-works">How it Works</a>
+<a class="hover:text-primary-container transition-colors" href="#features">Features</a>
+<a class="hover:text-primary-container transition-colors" href="#features">Price</a>
+<a class="hover:text-primary-container transition-colors" href="#summary">Executive Summary</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="text-secondary font-medium hover:text-slate-900 transition-colors hidden sm:block">Log In</button>
+<button class="bg-primary-container text-white rounded-full py-2.5 px-6 font-body-md font-medium hover:bg-surface-tint transition-all active:scale-95 shadow-sm">
+                Start Analysis
+            </button>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="min-h-[75vh] flex flex-col items-center justify-center text-center px-6 py-20 relative overflow-hidden bg-gradient-to-b from-surface-bright to-surface-container-low">
+<!-- Abstract background decoration -->
+<div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-fixed/20 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
+<span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-container/10 text-primary-container font-label-caps text-label-caps mb-8 border border-primary-container/20">
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span>
+                The Future of Analytics
             </span>
-          </div>
-          <p class="text-[11px] font-medium text-slate-500">Automated Data Ingestion & Cleaning</p>
-        </div>
-      </div>
-
-      <!-- Right Header Status Indicator -->
-      <div class="flex items-center space-x-3">
-        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100/80 border border-slate-200/60 text-xs font-medium text-slate-600">
-          <span class="relative flex h-2 w-2">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-          </span>
-          <span class="font-mono text-[11px] tracking-wider text-slate-700 font-semibold">PIPELINE: ONLINE</span>
-        </div>
-      </div>
-
-    </div>
-  </header>
-
-  <!-- MAIN CONTAINER -->
-  <main class="flex-1 max-w-4xl w-full mx-auto px-6 py-10 flex flex-col gap-8">
-    
-    <!-- Hero / Headline Section -->
-    <div class="text-center max-w-xl mx-auto space-y-2">
-      <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-        Clean your CSV & Excel sheets instantly.
-      </h2>
-      <p class="text-sm text-slate-500 leading-relaxed">
-        Mag-upload ng raw CSV file para sa automated duplicate removal, null handling, at structural validation.
-      </p>
-    </div>
-
-    <!-- DATA INGESTION CARD -->
-    <section class="bg-white border border-slate-200/80 rounded-2xl p-6 sm:p-8 shadow-card hover:shadow-card-hover transition-all duration-300">
-      
-      <!-- Card Header -->
-      <div class="flex items-center justify-between mb-5">
-        <div class="flex items-center gap-2.5">
-          <div class="w-2.5 h-2.5 rounded-full bg-emerald-500"></div>
-          <h3 class="font-display text-base font-bold text-slate-900">Ingestion Pipeline</h3>
-        </div>
-        <span class="text-xs text-slate-400 font-mono">Supports: .CSV, .XLSX (Max 50MB)</span>
-      </div>
-
-      <!-- Drag & Drop Zone -->
-      <div 
-        id="dropzone" 
-        onclick="document.getElementById('fileInput').click()"
-        ondragover="handleDragOver(event)"
-        ondragleave="handleDragLeave(event)"
-        ondrop="handleDrop(event)"
-        class="group relative border-2 border-dashed border-slate-200 hover:border-emerald-500/80 rounded-xl p-8 sm:p-12 text-center bg-slate-50/50 hover:bg-emerald-50/30 transition-all duration-200 cursor-pointer overflow-hidden"
-      >
-        <input type="file" id="fileInput" accept=".csv,.xlsx" class="hidden" onchange="handleFileSelect(event)">
-        
-        <div class="flex flex-col items-center justify-center space-y-3 pointer-events-none">
-          <!-- Animated Green Icon Container -->
-          <div class="w-12 h-12 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center text-emerald-600 group-hover:scale-110 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-300 shadow-sm">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-            </svg>
-          </div>
-          
-          <!-- Instructions Text -->
-          <div>
-            <p id="fileNameDisplay" class="text-sm font-semibold text-slate-700 group-hover:text-emerald-700 transition">
-              Click to upload CSV <span class="font-normal text-slate-400">or drag and drop</span>
+<h2 class="font-display-lg text-[40px] md:text-display-lg text-slate-900 mb-6 leading-tight max-w-3xl">
+                Ask Questions. <br class="hidden sm:block"/>Get <span class="text-primary-container">Interactive Stories.</span>
+</h2>
+<p class="font-body-lg text-body-lg text-secondary mb-12 max-w-2xl text-lg">
+                Stop wrestling with spreadsheets and rigid dashboards. Type what you want to know, and let AuraData build a compelling narrative from your raw data in seconds.
             </p>
-            <p class="text-xs text-slate-400 mt-1">Automatic column detection & anomaly checks</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Primary Action CTA Button -->
-      <div id="actionArea" class="mt-6 flex items-center justify-between pt-4 border-t border-slate-100 hidden">
-        <div class="flex items-center gap-2 text-xs text-slate-500">
-          <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-          <span id="selectedFileName" class="font-mono font-medium text-slate-700">dataset.csv</span>
-        </div>
-
-        <button 
-          onclick="processData()" 
-          class="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white text-xs font-semibold rounded-xl shadow-md shadow-emerald-500/10 active:scale-[0.98] transition-all"
-        >
-          <span>Run Automated Pipeline</span>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-        </button>
-      </div>
-
-    </section>
-
-    <!-- METRICS SUMMARY PANEL (Appears on Process) -->
-    <section id="resultCard" class="bg-white border border-slate-200/80 rounded-2xl p-6 sm:p-8 shadow-card hidden transition-all duration-300">
-      
-      <!-- Result Header -->
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-slate-100 gap-3">
-        <div class="space-y-1">
-          <div class="flex items-center gap-2">
-            <span class="flex h-2 w-2 rounded-full bg-emerald-500"></span>
-            <h3 class="font-display text-base font-bold text-slate-900">Dataset Cleaned Successfully</h3>
-          </div>
-          <p id="metricsDatasetName" class="text-xs font-mono text-slate-400">Dataset: --</p>
-        </div>
-
-        <span class="self-start sm:self-auto inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200/80 font-mono">
-          ✓ STATUS: READY FOR ANALYTICS
-        </span>
-      </div>
-
-      <!-- Executive KPI Grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
-        
-        <!-- Metric Card 1 -->
-        <div class="p-4 bg-slate-50/80 rounded-xl border border-slate-200/60 flex flex-col justify-between">
-          <span class="text-xs font-medium text-slate-500">Total Records</span>
-          <div class="mt-2 flex items-baseline gap-2">
-            <span id="totalRows" class="font-display text-2xl font-extrabold text-slate-900">0</span>
-            <span class="text-[11px] font-mono text-slate-400">rows</span>
-          </div>
-        </div>
-
-        <!-- Metric Card 2 (Excel Green Highlight) -->
-        <div class="p-4 bg-emerald-50/50 rounded-xl border border-emerald-100/80 flex flex-col justify-between">
-          <span class="text-xs font-medium text-emerald-800">Duplicates Removed</span>
-          <div class="mt-2 flex items-baseline gap-2">
-            <span id="duplicates" class="font-display text-2xl font-extrabold text-emerald-600">0</span>
-            <span class="text-[11px] font-mono text-emerald-600/70">cleared</span>
-          </div>
-        </div>
-
-        <!-- Metric Card 3 -->
-        <div class="p-4 bg-slate-50/80 rounded-xl border border-slate-200/60 flex flex-col justify-between">
-          <span class="text-xs font-medium text-slate-500">Null Values Imputed</span>
-          <div class="mt-2 flex items-baseline gap-2">
-            <span id="missingValues" class="font-display text-2xl font-extrabold text-slate-900">0</span>
-            <span class="text-[11px] font-mono text-slate-400">handled</span>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-  </main>
-
-  <!-- JAVASCRIPT INTERACTIONS -->
-  <script>
-    let activeFile = null;
-
-    function handleFileSelect(event) {
-      const file = event.target.files[0];
-      if (file) setFile(file);
-    }
-
-    function handleDragOver(event) {
-      event.preventDefault();
-      document.getElementById('dropzone').classList.add('border-emerald-500', 'bg-emerald-50/50');
-    }
-
-    function handleDragLeave(event) {
-      event.preventDefault();
-      document.getElementById('dropzone').classList.remove('border-emerald-500', 'bg-emerald-50/50');
-    }
-
-    function handleDrop(event) {
-      event.preventDefault();
-      document.getElementById('dropzone').classList.remove('border-emerald-500', 'bg-emerald-50/50');
-      if (event.dataTransfer.files.length > 0) {
-        setFile(event.dataTransfer.files[0]);
-      }
-    }
-
-    function setFile(file) {
-      activeFile = file;
-      document.getElementById('fileNameDisplay').innerHTML = `<span class="text-emerald-700 font-bold">${file.name}</span> selected`;
-      document.getElementById('selectedFileName').innerText = file.name;
-      document.getElementById('actionArea').classList.remove('hidden');
-    }
-
-    function processData() {
-      if (!activeFile) return;
-
-      document.getElementById('metricsDatasetName').innerText = "Dataset: " + activeFile.name;
-      document.getElementById('totalRows').innerText = "1,420";
-      document.getElementById('duplicates').innerText = "14";
-      document.getElementById('missingValues').innerText = "38";
-
-      const resultCard = document.getElementById('resultCard');
-      resultCard.classList.remove('hidden');
-      resultCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }
-  </script>
-</body>
-</html>
+<!-- NLQ Search Bar Simulation -->
+<div class="w-full max-w-2xl relative glow-input group transition-all duration-300">
+<div class="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-emerald-600 text-xl group-focus-within:text-emerald-700 transition-colors">sparkles</span>
+</div>
+<input class="w-full bg-white border-2 border-slate-200 rounded-full pl-14 pr-32 py-5 font-body-lg text-slate-900 shadow-sm focus:outline-none focus:border-emerald-500 transition-colors" placeholder="e.g. 'Why did revenue drop in Q3 for Region B?'" type="text"/>
+<div class="absolute inset-y-0 right-2 flex items-center">
+<button class="bg-slate-900 text-white rounded-full py-2.5 px-6 font-body-md font-medium hover:bg-slate-800 transition-colors shadow-md flex items-center gap-2">
+                    Analyze
+                    <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="mt-8 flex items-center gap-6 text-sm text-slate-500 font-medium">
+<span class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-500 text-[16px]">check_circle</span> Connects to CSV, SQL, Excel</span>
+<span class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-500 text-[16px]">check_circle</span> Bank-grade Security</span>
+</div>
+</div>
+</section>
+<!-- Process Flow Section -->
+<section class="py-24 px-6 max-w-6xl mx-auto" id="how-it-works">
+<div class="text-center mb-20">
+<h3 class="font-headline-lg text-headline-lg text-slate-900 mb-4">The Data Narrative Journey</h3>
+<p class="font-body-lg text-secondary max-w-2xl mx-auto">From raw, messy numbers to a boardroom-ready presentation in three simple steps.</p>
+</div>
+<div class="flex flex-col gap-24">
+<!-- Step 1 -->
+<div class="flex flex-col md:flex-row items-center gap-12 lg:gap-24 relative">
+<div class="w-full md:w-1/2 relative">
+<span class="step-number font-sans">1</span>
+<div class="relative z-10 pl-4 md:pl-8">
+<h4 class="font-headline-md text-headline-md text-slate-900 mb-4">Upload Raw Data</h4>
+<p class="font-body-lg text-slate-600 leading-relaxed mb-6">
+                            Simply drag and drop your massive, unstructured CSVs or connect directly to your data warehouse. We handle the formatting, structure, and schema inference instantly. No pre-processing required.
+                        </p>
+<ul class="space-y-3 font-body-md text-slate-700">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-emerald-500">done</span> Auto-schema detection</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-emerald-500">done</span> Support for files up to 10GB</li>
+</ul>
+</div>
+</div>
+<div class="w-full md:w-1/2">
+<div class="bg-white rounded-2xl border border-slate-200 shadow-xl p-8 relative overflow-hidden group hover:border-emerald-300 transition-colors">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-400 to-emerald-600"></div>
+<div class="border-2 border-dashed border-slate-300 rounded-xl bg-slate-50 p-10 flex flex-col items-center justify-center text-center h-64">
+<span class="material-symbols-outlined text-5xl text-slate-400 mb-4 group-hover:-translate-y-2 group-hover:text-emerald-500 transition-all duration-300">cloud_upload</span>
+<span class="font-headline-sm text-slate-700 mb-2">Drop your files here</span>
+<span class="text-sm text-slate-500">CSV, XLSX, JSON</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col md:flex-row-reverse items-center gap-12 lg:gap-24 relative">
+<div class="w-full md:w-1/2 relative">
+<span class="step-number font-sans">2</span>
+<div class="relative z-10 pl-4 md:pl-8">
+<h4 class="font-headline-md text-headline-md text-slate-900 mb-4">AI Auto-Cleaning</h4>
+<p class="font-body-lg text-slate-600 leading-relaxed mb-6">
+                            Our intelligent engine scans millions of rows in seconds to identify missing values, normalize formats, and remove duplicates. Your data health score updates in real-time.
+                        </p>
+<ul class="space-y-3 font-body-md text-slate-700">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-emerald-500">done</span> Smart outlier detection</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-emerald-500">done</span> Automated entity resolution</li>
+</ul>
+</div>
+</div>
+<div class="w-full md:w-1/2">
+<div class="bg-white rounded-2xl border border-slate-200 shadow-xl p-6 relative">
+<div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-100">
+<span class="font-label-caps text-slate-500">Processing...</span>
+<span class="bg-emerald-100 text-emerald-700 text-xs px-2 py-1 rounded font-bold">98% Health Score</span>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-center p-3 bg-slate-50 rounded-lg">
+<span class="text-sm text-slate-600 flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-emerald-500">check_circle</span> Duplicates Removed</span>
+<span class="font-mono-data font-bold text-slate-900">4,201</span>
+</div>
+<div class="flex justify-between items-center p-3 bg-slate-50 rounded-lg">
+<span class="text-sm text-slate-600 flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-emerald-500">check_circle</span> Nulls Imputed</span>
+<span class="font-mono-data font-bold text-slate-900">892</span>
+</div>
+<div class="flex justify-between items-center p-3 bg-slate-50 rounded-lg">
+<span class="text-sm text-slate-600 flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-emerald-500">check_circle</span> Formats Standardized</span>
+<span class="font-mono-data font-bold text-slate-900">12k+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col md:flex-row items-center gap-12 lg:gap-24 relative">
+<div class="w-full md:w-1/2 relative">
+<span class="step-number font-sans">3</span>
+<div class="relative z-10 pl-4 md:pl-8">
+<h4 class="font-headline-md text-headline-md text-slate-900 mb-4">Interactive Storytelling</h4>
+<p class="font-body-lg text-slate-600 leading-relaxed mb-6">
+                            Interact with your data through natural language. AuraData generates dynamic charts and textual narratives explaining the "why" behind the numbers, ready for presentation.
+                        </p>
+<ul class="space-y-3 font-body-md text-slate-700">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-emerald-500">done</span> Contextual narrative generation</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-emerald-500">done</span> Seamless export capabilities</li>
+</ul>
+</div>
+</div>
+<div class="w-full md:w-1/2">
+<div class="bg-white rounded-2xl border border-slate-200 shadow-xl p-6 relative">
+<div class="bg-emerald-50 rounded-xl p-5 mb-4 border border-emerald-100">
+<p class="text-sm text-emerald-900 leading-relaxed font-medium">
+                                "The <span class="font-bold">11% revenue decrease</span> in Q3 is primarily driven by a sharp drop in Product X sales across Region B, likely due to supply chain disruptions identified in log #492."
+                            </p>
+</div>
+<div class="h-40 bg-slate-50 rounded-lg border border-slate-100 relative overflow-hidden flex items-end">
+<svg class="absolute inset-0 w-full h-full text-emerald-500" preserveaspectratio="none" viewbox="0 0 100 100">
+<path d="M0,80 Q10,70 20,75 T40,60 T60,50 T80,30 T100,20 L100,100 L0,100 Z" fill="currentColor" fill-opacity="0.1"></path>
+<path d="M0,80 Q10,70 20,75 T40,60 T60,50 T80,30 T100,20" fill="none" stroke="currentColor" stroke-width="3"></path>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center">
+<button class="bg-white/90 backdrop-blur shadow-sm border border-slate-200 text-slate-700 text-xs font-bold px-4 py-2 rounded-full flex items-center gap-2 hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-[16px]">play_arrow</span> Play Animation
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Feature Grid -->
+<section class="py-24 bg-white border-y border-slate-200" id="features">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<h3 class="font-headline-lg text-headline-lg text-slate-900 mb-4">Enterprise-Grade Capabilities</h3>
+<p class="font-body-lg text-secondary max-w-2xl mx-auto">Powerful tools designed for data professionals, accessible to everyone.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+<!-- Feature 1 -->
+<div class="p-8 rounded-2xl bg-surface hover:bg-surface-container-low transition-colors border border-outline-variant/30 group">
+<div class="w-12 h-12 bg-primary-container/10 text-primary-container rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">troubleshoot</span>
+</div>
+<h4 class="font-headline-sm text-slate-900 mb-3">Anomaly Detection</h4>
+<p class="text-slate-600 leading-relaxed">
+                        Automatically highlight statistical outliers and unexpected trends in historical data sets. Our machine learning models detect deviations before they become problems.
+                    </p>
+</div>
+<!-- Feature 2 -->
+<div class="p-8 rounded-2xl bg-surface hover:bg-surface-container-low transition-colors border border-outline-variant/30 group">
+<div class="w-12 h-12 bg-primary-container/10 text-primary-container rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">rule</span>
+</div>
+<h4 class="font-headline-sm text-slate-900 mb-3">Structural Validation</h4>
+<p class="text-slate-600 leading-relaxed">
+                        Ensure data integrity across disparate sources. AuraData validates column types, enforces schema rules, and standardizes nomenclature instantly upon ingestion.
+                    </p>
+</div>
+<!-- Feature 3 -->
+<div class="p-8 rounded-2xl bg-surface hover:bg-surface-container-low transition-colors border border-outline-variant/30 group">
+<div class="w-12 h-12 bg-primary-container/10 text-primary-container rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">monitoring</span>
+</div>
+<h4 class="font-headline-sm text-slate-900 mb-3">Dynamic Recharts</h4>
+<p class="text-slate-600 leading-relaxed">
+                        Say goodbye to static images. Our visualizations are fully interactive, zoomable, and automatically adapt to highlight the most relevant data points requested in your query.
+                    </p>
+</div>
+<!-- Feature 4 -->
+<div class="p-8 rounded-2xl bg-surface hover:bg-surface-container-low transition-colors border border-outline-variant/30 group">
+<div class="w-12 h-12 bg-primary-container/10 text-primary-container rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">present_to_all</span>
+</div>
+<h4 class="font-headline-sm text-slate-900 mb-3">One-Click PPT Export</h4>
+<p class="text-slate-600 leading-relaxed">
+                        Transform complex analysis into a beautifully formatted PowerPoint presentation with a single click. Charts, narratives, and executive summaries are pre-arranged.
+                    </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Executive Summary (Dark Theme) -->
+<section class="py-24 bg-slate-900 text-white relative overflow-hidden" id="summary">
+<!-- decorative blobs -->
+<div class="absolute top-0 right-0 w-96 h-96 bg-emerald-600/20 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-0 left-0 w-96 h-96 bg-blue-600/20 rounded-full blur-[120px]"></div>
+<div class="max-w-5xl mx-auto px-6 relative z-10 text-center">
+<div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/10 mb-8 border border-white/20">
+<span class="material-symbols-outlined text-3xl text-emerald-400">psychology</span>
+</div>
+<h2 class="font-display-lg text-[36px] md:text-[48px] mb-8 font-bold text-white leading-tight">
+            The AI Executive Summary
+        </h2>
+<p class="font-body-lg text-slate-300 max-w-3xl mx-auto text-xl leading-relaxed mb-12">
+            AuraData doesn't just show you dashboards; it reads them for you. It synthezises millions of data points into a concise, actionable summary tailored for leadership teams, saving hours of manual reporting.
+        </p>
+<div class="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl p-8 max-w-4xl mx-auto text-left shadow-2xl">
+<div class="flex items-center gap-3 mb-6 pb-6 border-b border-slate-700">
+<div class="w-3 h-3 rounded-full bg-red-500"></div>
+<div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+<div class="w-3 h-3 rounded-full bg-green-500"></div>
+<span class="ml-4 font-mono-data text-slate-400 text-sm">Monthly_Review_AI_Output.md</span>
+</div>
+<div class="space-y-6 text-slate-300 font-body-md leading-relaxed text-lg">
+<p><span class="text-emerald-400 font-bold">Key Insight:</span> Overall efficiency increased by 14% this month, primarily driven by the new automated processing pipeline in Sector 4.</p>
+<p><span class="text-yellow-400 font-bold">Risk Area:</span> Customer churn in the mid-market segment spiked to 4.2% (up from 2.1%). Correlated data suggests this is linked to the recent pricing update.</p>
+<p><span class="text-blue-400 font-bold">Recommendation:</span> Implement targeted retention campaigns for mid-market clients using the segmented list automatically generated in <span class="underline decoration-slate-600 cursor-pointer hover:text-white transition-colors">Dataset A</span>.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-emerald-700 text-emerald-50 py-12 px-6 mt-auto">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-emerald-600/50 pb-12 mb-8">
+<div class="col-span-1 md:col-span-2">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-white text-3xl">analytics</span>
+<h2 class="font-headline-sm font-bold text-white">AuraData AI</h2>
+</div>
+<p class="text-emerald-100 max-w-sm mb-6 text-sm">
+                    Empowering teams to make data-driven decisions through intelligent storytelling and automated analysis.
+                </p>
+</div>
+<div>
+<h4 class="font-bold text-white mb-4 uppercase tracking-wider text-sm">Product</h4>
+<ul class="space-y-3 text-sm text-emerald-100">
+<li><a class="hover:text-white transition-colors" href="#">Features</a></li>
+=
+<li><a class="hover:text-white transition-colors" href="#">Integrations</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Pricing</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Changelog</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-white mb-4 uppercase tracking-wider text-sm">Company</h4>
+<ul class="space-y-3 text-sm text-emerald-100">
+<li><a class="hover:text-white transition-colors" href="#">About Us</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Careers</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Contact</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-xs text-emerald-200">
+<p>© 2024 AuraData AI. All rights reserved.</p>
+<div class="flex items-center gap-4 mt-4 md:mt-0">
+<a class="hover:text-white transition-colors" href="#">Twitter</a>
+<a class="hover:text-white transition-colors" href="#">LinkedIn</a>
+<a class="hover:text-white transition-colors" href="#">GitHub</a>
+</div>
+</div>
+</footer>
+</body></html>
