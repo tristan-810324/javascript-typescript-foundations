@@ -317,4 +317,98 @@ while (balance > 0) {
 
 console.log(`Successful withdrawals: ${successful}`);
 console.log(`Rejected withdrawals: ${rejected}`);
-console.log(`Remaining balance: ${balance}`);
+console.log(`Remaining balance: ${balance}`); 
+
+
+
+
+let stock = 10; 
+
+while (stock > 0) { 
+    if (stock === 5){ 
+        console.log("ito ay number 6 na")
+        break; 
+    }
+}
+
+let stock = 5;
+
+while (stock > 0) { 
+
+    if (stock === 3) { 
+        stock--; 
+        continue;
+    } 
+
+    console.log(stock); 
+    stock--; 
+}
+
+
+let number = 1; 
+
+while (number <= 5) { 
+     
+    if (number === 3) {
+        number++;  // magaadd sha pero 
+        continue;  // magsskip yung number 3 sa continue funti 
+    } 
+
+    console.log(number); 
+    number++;
+}
+
+
+
+let number = 1; 
+
+while (number <= 10) { 
+
+    if (number !== 5) { 
+        console.log(number);
+    } 
+
+    number++; 
+}  
+
+
+
+let number = 1; 
+
+while (number <= 10) { 
+
+    if (number === 5) { 
+        number++; 
+        continue;
+    } 
+
+    console.log(number);
+    number++;
+}  
+
+
+
+
+
+let stock = 10; 
+let processed  = 0; 
+
+while (stock > 0) { 
+    
+    if (stock === 5) { 
+        stock--;
+        continue;
+    } 
+    
+    stock--;
+    processed++;
+
+    console.log("Processed item"); 
+
+    if (processed === 7) { 
+        break; 
+    }
+    
+} 
+console.log("Stock remaining:", stock);
+console.log("Total processed:", processed);

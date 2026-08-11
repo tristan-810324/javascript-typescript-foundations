@@ -449,5 +449,3 @@ for (let department = 1; department <= 2; department++) {
 
 console.log("Processed Products:", processedProducts);
 console.log("Total Stocks:", totalStocks);
-
-
