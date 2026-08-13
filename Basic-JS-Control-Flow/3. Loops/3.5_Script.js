@@ -411,4 +411,161 @@ while (stock > 0) {
     
 } 
 console.log("Stock remaining:", stock);
-console.log("Total processed:", processed);
+console.log("Total processed:", processed);  
+
+
+
+// do while loop 
+
+
+let balance = 5000;
+let choice;
+
+do {
+    console.log("=== ATM MENU ===");
+    console.log("1. Check Balance");
+    console.log("2. Withdraw");
+    console.log("3. Exit");
+
+    choice = Number(prompt("Choose an option: "));
+
+    if (choice === 1) {
+
+        console.log(`Balance: ₱${balance}`);
+
+    } else if (choice === 2) {
+
+        if (balance < 500) {
+            console.log("Insufficient balance.");
+            continue;
+        }
+
+        balance -= 500;
+
+        console.log("Withdrawal successful.");
+        console.log(`Remaining balance: ₱${balance}`);
+
+    } else if (choice === 3) {
+
+        console.log("Thank you for using the ATM.");
+
+    } else {
+
+        console.log("Invalid option.");
+
+    }
+} while (choice !== 3);
+
+
+// examples
+let balance = 10000; 
+let transaction = 1; 
+
+
+do { 
+    console.log(`processing transactions ${transaction}`); 
+
+    balance -= 2000; 
+    transaction++; 
+
+} while (balance > 0); 
+
+console.log(`Remaining balance ${balance}`); 
+
+
+// examples
+
+let stock = 5; 
+let processsed = 0; 
+
+
+
+do {
+    console.log(`Processing stock ${stock}`); 
+
+    processed++; 
+    stock--; 
+
+} while (stock > 0); 
+
+console.log(`Processed: ${processed}`); 
+
+
+// another examples 
+
+
+let stock = 7;
+let processed = 0;
+let skipped = 0; 
+
+
+
+do { 
+    
+    if (stock === 5) {
+        skipped++; 
+        stock--;
+        continue;
+    } 
+
+    console.log(`Processing items: ${stock}`); 
+
+    processed++; 
+    stock--; 
+
+} while (stock > 0); 
+
+console.log(`Processed: ${processed}`); 
+console.log(`skipped ${skipped}`); 
+
+
+
+
+
+let stock = 8; 
+let processed = 0; 
+
+
+do { 
+
+    if (stock === 4) { 
+        break;
+    }
+
+    console.log(`Processing stock ${stock}`); 
+
+    processed++; 
+    stock--; 
+} while (stock > 0); 
+
+console.log(`Processed: ${Processed}`); 
+console.log(`Remaining stock ${stock}`); 
+
+
+
+let stock = 9; 
+let processed = 0; 
+let skipped = 0; 
+
+
+do { 
+
+    console.log(`Processed items ${processed}`); 
+
+    if (stock === 6) { 
+        continue;
+        stock--;
+    }  
+
+    if (stock === 3) { 
+        break;
+    }
+
+
+processed++; 
+skipped++;
+
+} while (stock <= 5); 
+
+console.log(`Processed ${processed}`); 
+console.log(`skipped ${skipped}`); 
