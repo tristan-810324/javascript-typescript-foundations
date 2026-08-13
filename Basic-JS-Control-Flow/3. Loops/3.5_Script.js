@@ -543,29 +543,73 @@ console.log(`Remaining stock ${stock}`);
 
 
 
-let stock = 9; 
-let processed = 0; 
-let skipped = 0; 
 
+let stock = 9;
+let processed = 0;
+let skipped = 0;
 
-do { 
+do {
 
-    console.log(`Processed items ${processed}`); 
-
-    if (stock === 6) { 
-        continue;
+    if (stock === 6) {
+        skipped++;
         stock--;
-    }  
+        continue;
+    }
 
-    if (stock === 3) { 
+    if (stock === 3) {
+        break;
+    }
+
+    if (stock <= 5) {
+        console.log("Low stock warning");
+    }
+
+    console.log(`Processing item ${stock}`);
+
+    processed++;
+    stock--;
+
+} while (stock > 0);
+
+console.log(`Processed: ${processed}`);
+console.log(`Skipped: ${skipped}`);
+console.log(`Remaining stock: ${stock}`);
+
+
+
+// more examples
+
+let stock = 10;
+let processed = 0;
+let skipped = 0;
+
+do {
+
+    if (stock === 7) {
+        skipped++;
+        stock--;
+        continue;
+    }
+
+
+    if (stock === 4) {
         break;
     }
 
 
-processed++; 
-skipped++;
+    if (stock <= 5) {
+        console.log("Low stock warning");
+    }
 
-} while (stock <= 5); 
 
-console.log(`Processed ${processed}`); 
-console.log(`skipped ${skipped}`); 
+    console.log(`Processing item ${stock}`);
+    processed++;
+
+
+    stock--;
+
+} while (stock > 0);
+
+console.log(`Processed: ${processed}`);
+console.log(`Skipped: ${skipped}`);
+console.log(`Remaining stock: ${stock}`);
