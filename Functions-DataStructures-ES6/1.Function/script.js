@@ -53,3 +53,66 @@ const user1 = { name: "Juan", age: 20 };
 console.log(processUser(user1)); // Output: Hello Juan, you are an Adult!
 
 console.log(processUser(null));  // Output: No user found!
+
+
+
+
+
+const calculatorDiscount = (price, discountPercent = 10) => { 
+    const discoutAmount = price * (discountPercent / 100); 
+    return price - discountAmount; 
+} 
+
+console.log(calculatorDiscount(1000)); 
+console.log(calculatorDiscount(1000, 20)); 
+
+
+
+const notifyByEmail = (message) => `Email sent: ${message}`; 
+
+const notifyBySMS = (message) => `SMS sent: ${message}`;  
+
+const processOrder  = (orderId, sendNotification) => { 
+    const status = `order #{orderId} has been shipped`; 
+    return sendNotification(status); 
+} 
+
+console.log(processOrder(101, notifyByEmail));
+console.log(processOrder(102, notifyBySms)); 
+
+
+
+
+// simple calculator  
+
+const currentUser = { 
+    id: 1,
+    username: "alex", 
+    role: "user",
+    isActive: false
+};   
+
+const activeUserAccount = (user, adminRole) => { 
+
+    if (adminRole !== "ADMIN") { 
+        return { sucesss: false, message: "Unauthorized action"};
+    }
+
+    if (user.isActive) { 
+        return {sucess: false, message: "User is already active"}; 
+    }
+
+    return { 
+        secess: true,
+        data: { ...user, isActive: true} 
+    }; 
+};   
+
+const result1 = activateUserAccount(currentUser , "GUEST"); 
+console.log(result1); 
+
+const result2 = activeUserAccount(currentUser, "ADMIN"); 
+console.log(result2); 
+
+
+
