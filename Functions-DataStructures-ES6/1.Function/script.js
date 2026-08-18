@@ -1,10 +1,16 @@
 /* what if function?? 
 
 in programming function is reusable block of code 
+
+- a section of reusable code 
+
 isang naka package na hanay ng mga utios na ginawa
 para gumana ang isang practicular na job. 
 
+difference of console.log vs return 
 
+console.log() - para ipakita ang value 
+return - ibinabalik ang value para nagamit sa ibang code.   
 
 */ 
 // this is standard function
@@ -113,6 +119,102 @@ console.log(result1);
 
 const result2 = activeUserAccount(currentUser, "ADMIN"); 
 console.log(result2); 
+
+
+
+// more explanations 
+
+function introduce (name, age) { 
+    console.log("my name is " + name); 
+    console.log("I am" + age + "years old");   
+ 
+} 
+introduce("Tristan" ,  21); 
+
+
+// more examples 
+
+function calculateTotal (price, quantity) { 
+    let total = price * quantity; 
+
+    if(total >= 1000) { 
+        return total - 100; 
+    } 
+
+    return total;
+} 
+
+let result = calculateTotal(300 , 4); 
+console.log(result);   
+
+
+// another examples 
+function happyBirthday(username, age) { 
+    console.log(`happy birthday ${username}`); 
+    console.log(`you are now ${age} years old`); 
+} 
+happyBirthday("Tristan" , 21); 
+
+
+function printNumbers(limit) { 
+
+    for(let i = 1; i <= limit; i++) { 
+        conmsole.log(i); 
+    }
+}
+
+printNumbers; 
+
+
+// coding challenges 
+
+function calculateGrade(score) { 
+    if (score >= 90) { 
+        return "Excellent"; 
+    } 
+    else if (score >= 80) { 
+        return "Very Good"; 
+    } 
+    else if (score >= 75) { 
+        return "Passed"; 
+    } 
+    else { 
+        return "Failed"; 
+    }
+}
+
+console.log(calculateGrade(95));
+console.log(calculateGrade(85));
+console.log(calculateGrade(76));
+console.log(calculateGrade(60));
+
+ 
+// coding 2
+function calculateTotal(price , quantity) { 
+    return price * quantity; 
+} 
+
+console.log(calculateTotal(100, 5));
+console.log(calculateTotal(250, 3)); 
+
+// coding  3 
+
+function calculateDiscount(total) { 
+    if (total >= 1000) { 
+        return total * 0.10;
+    } 
+    else if (total >= 500) { 
+        return total * 0.05; 
+    } 
+    else { 
+        return 0; 
+    }
+} 
+console.log(calculateDiscount(2000));
+console.log(calculateDiscount(800));  
+console.log(calculateDiscount(300));  
+
+
 
 
 
