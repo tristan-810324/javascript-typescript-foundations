@@ -200,7 +200,7 @@ console.log(calculateTotal(250, 3));
 // coding  3 
 
 function calculateDiscount(total) { 
-    if (total >= 1000) { 
+    if (total >= 100) { 
         return total * 0.10;
     } 
     else if (total >= 500) { 
@@ -217,4 +217,69 @@ console.log(calculateDiscount(300));
 
 
 
+// other examples 
 
+function calculateTotal(price, quantity) { 
+    return price * quantity; 
+} 
+
+let total1 = calculateTotal(500, 3); 
+console.log(total); 
+
+
+// challenges 
+
+function calculateDifference(a, b) { 
+    return a - b; 
+} 
+
+let results = calculateDifference(20 - 5); 
+
+console.log(results); 
+
+
+
+// other basic challenges 
+function calculateProduct (price, quantity) { 
+    return price * quantity; 
+ 
+} 
+
+let totalProduct = calculateProduct (100, 5); 
+console.log(calculateProduct); 
+
+
+// other examples
+ 
+let price = 250; 
+let quantity = 4; 
+
+function calculateTotal(price, quantity) {
+    return price * quantity;
+}
+
+let total = calculateTotal(price, quantity);
+
+let shippingFee = 100;
+
+let finalTotal = total + shippingFee;
+
+console.log(finalTotal);  
+
+
+function calculateShipping(total) { 
+    
+    if (total >= 1000) { 
+        return 0; 
+    } else { 
+        return 100;
+    }
+} 
+
+let shipping = calculateShipping(1500); 
+console.log(shipping); 
+
+
+
+                                                                                
+   
