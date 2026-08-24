@@ -280,6 +280,80 @@ let shipping = calculateShipping(1500);
 console.log(shipping); 
 
 
+// user is not empty and password atleast 8 character 
 
-                                                                                
-   
+function validateRegistration(username, password) { 
+    if (username === "") { 
+        return "Username is required"; 
+    }
+
+    if (password.length < 8) { 
+        return "password must be atleast 8 characters"; 
+    }
+
+    return "Registration valid"; 
+ } 
+
+ let result4 = validateRegistration("Tristan" , "password123"); 
+
+ console.log(result);  
+
+
+
+
+ function yourGrades(score) { 
+
+    if (score >= 90) { 
+        return "Excellent"; 
+    } 
+    else if (score >= 80) { 
+        return "Very Good"; 
+    } 
+    else if (score >= 75) { 
+        return "Passed"; 
+    } 
+    else { 
+        return "failed"; 
+    }
+ } 
+
+let result5 = getGrades(87); 
+console.log(result5); 
+
+
+function processUser(user) { 
+    const isValid = validateUser(user); 
+
+    if(!isValid) { 
+        return "Invalid user"; 
+    } 
+
+    const name = formatUserName(user); 
+
+    return `welcome ${name}`; 
+} 
+
+//  1 trying my besst to understand function very well
+function calculateTotalPrice(price, quantity) {
+    return price * quantity;
+}
+
+const   Callresult = calculateTotalPrice(100, 5);
+console.log(Callresult);
+
+
+// challenges 2 
+
+function calculateDiscount(price, discountPrice) { 
+    const discountAmount = price * (discountPrice / 100);
+    return price - discountAmount;  
+}
+
+const discountResult = calculateDiscount(1000, 20);
+console.log(discountResult); 
+
+
+
+
+
+
