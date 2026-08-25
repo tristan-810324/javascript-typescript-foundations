@@ -354,6 +354,90 @@ console.log(discountResult);
 
 
 
+// 3rd challenge 
+// function pra mavalidate yung username kung empty or not
+function validateUsername(username) { 
+    if (!username) { 
+        return "username is required"; 
+    }
+    return "username is valid"; 
+}  
+
+// function para mavalidate yung password kung atleast 8 characters 
+function validatePassword (password) { 
+    if (password.length < 8) { 
+        return "password must be atleast 8 characters"; 
+    }
+        return "password is valid"; 
+} 
+
+// main function para macall ang dalwang helper na function
+function validateUsers (user) { 
+    const usernameResult = validateUsername(user.username); 
+    const passwordResult = validatePassword(user.password); 
+
+    if(usernameResult === "username is required" &&  passwordResult === "password must be atleast 8 characters") { 
+        return "Registation valid"; 
+    } 
+    
+    // Kung may error, pwedeng ibalik kung alin ang nag-fail
+    return usernameResult !== "username valid" ? usernameResult : passwordResult;
+}
+
+const user = { 
+    username: "Tristan", 
+    password: "password123"
+}; 
+
+console.log(validateUser(user)); 
+ 
+
+
+
+
+
+const order = {
+    product: "Keyboard",
+    price: 1500,
+    quantity: 2
+};
+
+function calculateSubtotal(order) {
+    return order.price * order.quantity;
+}
+
+function calculateShipping(subtotal) {
+    if (subtotal >= 1000) {
+        return 0;
+    }
+
+    return 100;
+}
+
+function calculateFinalTotal(order) {
+    const subtotal = calculateSubtotal(order);
+    const shipping = calculateShipping(subtotal);
+
+    return subtotal + shipping;
+}
+
+console.log(calculateFinalTotal(order));
+
+
+
+
+// next challenger
+const product = {
+    name: "Keyboard",
+    stock: 10
+};
+
+function canPurchase(product, quantity) {
+    return quantity <= product.stock;
+}
+
+console.log(canPurchase(product, 5));
+console.log(canPurchase(product, 15));
 
 
 
