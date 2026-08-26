@@ -440,4 +440,38 @@ console.log(canPurchase(product, 5));
 console.log(canPurchase(product, 15));
 
 
+// last challenger
+const products = {
+    name: "Keyboard",
+    price: 1500,
+    stock: 10
+};
 
+function canPurchase(product, quantity) {
+    return quantity <= product.stock;
+}
+
+function calculateTotal(product, quantity) {
+    return product.price * quantity;
+}
+
+function processPurchase(product, quantity) {
+
+    if (!canPurchase(product, quantity)) {
+        return {
+            success: false,
+            message: "Insufficient stock"
+        };
+    }
+
+    const total = calculateTotal(product, quantity);
+
+    return {
+        success: true,
+        product: product.name,
+        quantity: quantity,
+        total: total
+    };
+}
+
+console.log(processPurchase(product, 2));
