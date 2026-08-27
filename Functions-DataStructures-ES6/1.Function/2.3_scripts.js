@@ -70,3 +70,37 @@ console.log(result);
  console.log(withdraw(60000));
  console.log(balance); 
 
+
+ // next challenge 
+ const users = [
+    { username: "tristan", password: "1234", role: "admin" },
+    { username: "maria", password: "5678", role: "user" },
+    { username: "john", password: "abcd", role: "user" }
+];
+
+function login(username, password) {
+
+    for (const user of users) {
+
+        if (
+            user.username === username &&
+            user.password === password
+        ) {
+            return {
+                success: true,
+                message: "Login successful",
+                username: user.username,
+                role: user.role
+            };
+        }
+    }
+
+    return {
+        success: false,
+        message: "Invalid username or password"
+    };
+}
+
+const results = login("tristan", "1234");
+
+console.log(result);
