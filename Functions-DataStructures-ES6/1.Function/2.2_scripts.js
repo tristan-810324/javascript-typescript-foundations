@@ -53,5 +53,14 @@ function canPurchase(item, quantity) {
 console.log(canPurchase(item, 5)); 
 console.log(canPurchase(item, 15)); 
 
+// other examples
+function login(username, password) {
+    return username === correctUsername &&
+           password === correctPassword;
+}
+
+console.log(login("admin", "1234")); // true
+console.log(login("admin", "wrong")); // false
+
 
 
