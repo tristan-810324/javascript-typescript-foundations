@@ -1,7 +1,7 @@
 // Array Methods (.map(), .filter(), .find(), .forEach())
 
 /* what is Array method?? y isang special na uri ng 
-object na ginagamit para mag-imbak ng maraming value 
+object na ginagamit para mag-imbak/store ng maraming value 
 sa loob ng iisang variable.
 
 is a collection/list of related data
@@ -108,5 +108,6 @@ const products = [
         price: 1500,
         stock: 10
     }
-];
+]; 
+
 

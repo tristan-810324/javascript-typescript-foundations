@@ -91,3 +91,73 @@ buttons.forEach(button => {
     });
 });
 
+
+
+
+const employees = [
+    { name: "Juan", position: "Developer" },
+    { name: "Maria", position: "Designer" },
+    { name: "Pedro", position: "Tester" }
+];  
+
+employees.forEach(employee => {
+    console.log(`${employee.name} - ${employee.position}`);
+});  
+
+
+const smProducts = [ 
+    {name: "Laptop" , price: 50000}, 
+    {name: "Mouse" , price: 500},
+    {name: "Keyboard" , price: 1500}
+];
+
+smProducts.forEach(product => {
+    console.log(
+        `Product: ${product.name} | Price: ₱${product.price}`
+    );
+});  
+
+
+
+
+
+const walterProducts = [
+    { name: "Laptop", stock: 5 },
+    { name: "Mouse", stock: 0 },
+    { name: "Keyboard", stock: 10 },
+    { name: "Monitor", stock: 0 }
+]; 
+
+
+walterProducts.forEach(product=> { 
+    if(product.stock > 0) { 
+        console.log(`Product: ${product.name} is in stock.`);
+    } else { 
+        console.log(`Product: ${product.name} is out of stock.`);
+    }
+});   
+
+
+
+
+const dyciStudents = [
+    { name: "Juan", score: 90 },
+    { name: "Maria", score: 70 },
+    { name: "Pedro", score: 85 },
+    { name: "Ana", score: 60 }
+];  
+
+
+dyciStudents.forEach(students => { 
+    if (students.score >= 80) { 
+        console.log(`${students.name} passed with a score of ${students.score}.`);
+    } else { 
+        console.log(`${students.name} failed with a score of ${students.score}.`);
+    }
+});   
+
+
+// TRANSFORM  → map() - palitan or baguhin
+
+
+ 
