@@ -5,7 +5,15 @@ object na ginagamit para mag-imbak/store ng maraming value
 sa loob ng iisang variable.
 
 is a collection/list of related data
-*/ 
+*/   
+
+// bakit tayo gumamagamit ng arrays 
+/* 
+1. pinapaiksi ang code
+2. mas madaling iloop at imanipulate ang data
+3 ito dynamic na pweudeng magbago ng laman nito habang nag wowork 
+ang program. 
+*/
 
 let pruits1 = "apple,"; 
 let pruits2 = "banana,";

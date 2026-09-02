@@ -289,4 +289,94 @@ function checkUserAge(user) {
     }
 }
 
-users.forEach(checkUserAge);
+users.forEach(checkUserAge);  
+
+
+
+
+
+const ordershaha = [
+    {
+        id: 101,
+        customer: "Juan",
+        quantity: 3,
+        pricePerItem: 500
+    },
+    {
+        id: 102,
+        customer: "Maria",
+        quantity: 1,
+        pricePerItem: 2500
+    },
+    {
+        id: 103,
+        customer: "Pedro",
+        quantity: 5,
+        pricePerItem: 200
+    }
+];
+
+ordershaha.forEach(order => {
+    const total = order.quantity * order.pricePerItem;
+
+    let shippingFee;
+
+    if (total >= 2000) {
+        shippingFee = 0;
+    } else {
+        shippingFee = 150;
+    }
+
+    const finalTotal = total + shippingFee;
+
+    console.log(`Order #${order.id}`);
+    console.log(`Customer: ${order.customer}`);
+    console.log(`Total: ₱${total}`);
+    console.log(`Shipping Fee: ₱${shippingFee}`);
+    console.log(`Final Total: ₱${finalTotal}`);
+    console.log("--------------------");
+});  
+
+
+// array methods - map() - palitan/baguhin || itransform
+
+/*
+ito ay ginagamit para baguhin oh itransform ang bawat elements sa loob ng isang array 
+ng ito binabago ang original code.  
+
+- ito rin ay tumatanggap ng callback function
+*/     
+
+const lorenziansUsers = [ 
+    {id: 1, name: "juan", email: "juan@gmail.com"}, 
+    {id: 2, name: "pedro", email:"pedro@gmail.com"}, 
+    {id: 3, name: "maria", email: "maria@gmail.com"}
+];  
+
+const updatedUsers = lorenziansUsers.map(user => user.email); 
+console.log(updatedUsers);   
+
+
+const things = [
+    { id: 1, name: "Laptop", price: 50000 },
+    { id: 2, name: "Mouse", price: 1000 },
+    { id: 3, name: "Keyboard", price: 3000 }
+];
+
+
+const productNames = things.map(product => product.name); 
+console.log(productNames);    
+
+
+const mlUsers = [
+    { name: "Juan", age: 20 },
+    { name: "Maria", age: 25 },
+    { name: "Pedro", age: 18 }
+];  
+
+
+const ages = mlUsers.map(user => {
+    return user.age;
+});
+
+console.log(ages);
