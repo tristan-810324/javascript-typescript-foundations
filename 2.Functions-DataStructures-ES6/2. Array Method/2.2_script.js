@@ -379,4 +379,108 @@ const ages = mlUsers.map(user => {
     return user.age;
 });
 
-console.log(ages);
+ 
+
+
+
+
+const mlEmployees = [
+    { name: "Juan", hoursWorked: 8, hourlyRate: 500 },
+    { name: "Maria", hoursWorked: 10, hourlyRate: 400 },
+    { name: "Pedro", hoursWorked: 6, hourlyRate: 350 }
+]; 
+
+const salaries = mlEmployees.map(employee => { 
+    return employee.hoursWorked * employee.hourlyRate;
+}); 
+
+console.log(salaries); 
+
+
+const monicansStudents = [ 
+    {name: "juan" , score: 90}, 
+    {name: "maria" , score: 70}, 
+    {name : "pedro" , score: 86}
+];  
+
+const studentScores = monicansStudents.map(student => { 
+    if (student.score >= 80) { 
+        return `${student.name} - passed`; 
+    }
+    return `${student.name} - failed`; 
+});  
+
+console.log(studentScores); 
+
+
+
+
+
+const dyciNames = ["juan", "maria", "pedro"];
+
+const upperCaseNames = names.map(name => {
+    return name.toUpperCase();
+});
+
+console.log(upperCaseNames);
+
+// other examples
+
+const prices = [100, 500, 1000];
+
+const pricesWithVat = prices.map(price => {
+    return price * 1.12;
+});
+
+console.log(pricesWithVat);
+
+ 
+// another examples
+
+const yangaStudents = [
+    { name: "Juan", score: 90 },
+    { name: "Maria", score: 70 },
+    { name: "Pedro", score: 85 }
+]; 
+
+const studentMessages = yangaStudents.map(student => {
+    return `${student.name} has a score of ${student.score}`;
+});
+
+console.log(studentMessages); 
+
+// other examples 
+
+const hiProducts = [
+    { name: "Laptop", price: 50000 },
+    { name: "Mouse", price: 1000 },
+    { name: "Keyboard", price: 3000 }
+];
+
+const discountedPrices = hiProducts.map(product => {
+    const discount = product.price * 0.10;
+
+    return product.price - discount;
+});
+
+console.log(discountedPrices);
+
+
+// other examples 
+
+const gaUsers = [
+    { name: "Juan", age: 20 },
+    { name: "Maria", age: 16 },
+    { name: "Pedro", age: 25 }
+];
+
+const userStatus = gaUsers.map(user => {
+    return user.age >= 18
+        ? `${user.name} is an adult`
+        : `${user.name} is a minor`;
+});
+
+console.log(userStatus);
+
+ 
+
